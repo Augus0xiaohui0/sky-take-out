@@ -27,5 +27,16 @@ public interface EmployeeMapper {
             "(#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void insert(Employee employee);
 
+    /**
+     * 分页查看员工
+     * @param employeePageQueryDTO
+     * @return
+     */
     Page<Employee> selectPage(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 启用或者禁用员工账号
+     * @param build
+     */
+    void updateStatus(Employee build);
 }
